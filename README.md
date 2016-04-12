@@ -124,7 +124,7 @@ GLOBAL OPTIONS:
 
 # Executing a single command
 $ engage photon
-Firing photons topedos...
+Firing photons topedoes...
 
 # With single commands you'll be able to add arguments
 $ engage hail klingon ship
@@ -146,3 +146,4 @@ Todo
 - [ ] flags
 - [ ] subcommands
 - [ ] arguments with combined commands
+- [ ] streaming output
