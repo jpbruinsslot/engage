@@ -2,13 +2,15 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
+	"io"
+	"log"
 	"os"
 	"os/exec"
 	"regexp"
 	"strings"
 
 	"github.com/codegangsta/cli"
+	"github.com/kr/pty"
 )
 
 // App is the struct that holds the application specification
@@ -47,15 +49,28 @@ func (cmd Command) createAction() func(c *cli.Context) {
 			command := commandArr[0]
 			args := append(commandArr[1:], c.Args()...)
 
-			// execute the command, CombinedOutput to get output
-			// from command
-			out, err := exec.Command(command, args...).CombinedOutput()
-
+			// execute the command and use a pseudo-terminal
+			cmd := exec.Command(command, args...)
+			tty, err := pty.Start(cmd)
 			if err != nil {
-				fmt.Println(err)
+				log.Fatal(err)
 			}
+			defer tty.Close()
 
-			fmt.Println(string(out))
+			// pipe tty session to stdout
+			go func() {
+				io.Copy(os.Stdout, tty)
+			}()
+
+			// pipe stdin to tty session
+			go func() {
+				io.Copy(tty, os.Stdin)
+			}()
+
+			err = cmd.Wait()
+			if err != nil {
+				log.Fatal(err)
+			}
 		}
 	}
 
