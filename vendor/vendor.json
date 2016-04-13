@@ -1,0 +1,25 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "i27YHcyHY4stkXm12/ztso3wHUo=",
+			"path": "github.com/codegangsta/cli",
+			"revision": "71f57d300dd6a780ac1856c005c4b518cfd498ec",
+			"revisionTime": "2016-04-04T01:54:34Z"
+		},
+		{
+			"checksumSHA1": "6nmAJBw2phU9MUmkUnqFvbO5urg=",
+			"path": "github.com/kardianos/osext",
+			"revision": "29ae4ffbc9a6fe9fb2bc5029050ce6996ea1d3bc",
+			"revisionTime": "2015-12-22T15:32:29Z"
+		},
+		{
+			"checksumSHA1": "P29nLcVx4WzwhEDgDTCN76rS5WI=",
+			"path": "github.com/kr/pty",
+			"revision": "f7ee69f31298ecbe5d2b349c711e2547a617d398",
+			"revisionTime": "2015-10-07T23:04:24Z"
+		}
+	],
+	"rootPath": "github.com/erroneousboat/engage"
+}
