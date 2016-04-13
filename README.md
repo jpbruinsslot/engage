@@ -29,15 +29,8 @@ Create own cli app
 ------------------
 
 First clone this project, and make sure you have
-[The Go Programming Language](https://golang.org/dl/) installed. Engage depends
-on the awesome package [cli](https://github.com/codegangsta/cli), and you can
-install it by running:
-
-```bash
-$ go get github.com/codegangsta/cli
-```
-
-Then think about an incredible name you want to use for your application,
+[The Go Programming Language](https://golang.org/dl/) installed. Then think
+about an incredible name you want to use for your application,
 and then use it in the following command:
 
 ```bash
@@ -146,4 +139,3 @@ Todo
 - [ ] flags
 - [ ] subcommands
 - [ ] arguments with combined commands
-- [ ] streaming output
