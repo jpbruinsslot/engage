@@ -19,6 +19,12 @@
 			"path": "github.com/kr/pty",
 			"revision": "f7ee69f31298ecbe5d2b349c711e2547a617d398",
 			"revisionTime": "2015-10-07T23:04:24Z"
+		},
+		{
+			"checksumSHA1": "N5fb5y92DFIP+wUhi1rSwPp9vyk=",
+			"path": "golang.org/x/crypto/ssh/terminal",
+			"revision": "2f6fccd33b9b1fc23ebb73ad4890698820f7174d",
+			"revisionTime": "2016-04-06T19:39:42Z"
 		}
 	],
 	"rootPath": "github.com/erroneousboat/engage"

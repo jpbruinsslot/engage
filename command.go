@@ -9,6 +9,8 @@ import (
 	"regexp"
 	"strings"
 
+	"golang.org/x/crypto/ssh/terminal"
+
 	"github.com/codegangsta/cli"
 	"github.com/kr/pty"
 )
@@ -48,6 +50,17 @@ func (cmd Command) createAction() func(c *cli.Context) {
 			// Example: `command arg1 arg2 cli_arg1 cli_arg2`
 			command := commandArr[0]
 			args := append(commandArr[1:], c.Args()...)
+
+			// puts the terminal connected into raw mode, data is given as-is
+			// to the program, and the system does not interpret any of the
+			// special characters
+			// - https://en.wikipedia.org/wiki/Cooked_mode
+			// - http://stackoverflow.com/a/13104579/1346257
+			oldState, err := terminal.MakeRaw(0)
+			if err != nil {
+				log.Fatal(err)
+			}
+			defer terminal.Restore(0, oldState)
 
 			// execute the command and use a pseudo-terminal
 			cmd := exec.Command(command, args...)
