@@ -56,11 +56,12 @@ func (cmd Command) createAction() func(c *cli.Context) {
 			// special characters
 			// - https://en.wikipedia.org/wiki/Cooked_mode
 			// - http://stackoverflow.com/a/13104579/1346257
-			oldState, err := terminal.MakeRaw(0)
+			fd := os.Stdin.Fd()
+			oldState, err := terminal.MakeRaw(int(fd))
 			if err != nil {
 				log.Fatal(err)
 			}
-			defer terminal.Restore(0, oldState)
+			defer terminal.Restore(int(fd), oldState)
 
 			// execute the command and use a pseudo-terminal
 			cmd := exec.Command(command, args...)
