@@ -6,6 +6,65 @@ application where the commands are defined in a config file. This project was
 created to allow you to bundle common command line tasks in a config file and
 create your own named application.
 
+It changes this:
+```json
+{
+    "name": "engage",
+    "usage": "make it so",
+    "authors": [
+        {
+            "name": "Jean Luc Picard",
+            "email": "j.l.picard@starfleet.org"
+        }
+    ],
+    "version": "NCC-1701-D",
+    "commands": [
+        {
+            "name": "photon",
+            "action": "./photon-torpedoes.sh",
+            "usage": "Arm the photon torpedoes"
+        },
+        {
+            "name": "hail",
+            "action": "echo",
+            "usage": "Hail ship"
+        },
+        {
+            "name": "warp",
+            "action": "./engines.sh && ./warp.sh",
+            "usage": "Use to jump to warp speed"
+        }
+    ]
+}
+```
+
+Into this:
+```bash
+$ engage
+
+NAME:
+   engage - make it so
+
+USAGE:
+   main [global options] command [command options] [arguments...]
+   
+VERSION:
+   NCC-1701-D
+   
+AUTHOR(S):
+   Jean Luc Picard <j.l.picard@starfleet.org> 
+   
+COMMANDS:
+    photon      Arm the photon torpedoes
+    hail        Hail ship
+    warp        Use to jump to warp speed
+
+GLOBAL OPTIONS:
+   --help, -h           show help
+   --version, -v        print the version
+```
+
+
 Using Engage
 ------------
 
