@@ -101,9 +101,11 @@ place this application together with the `engage.json` file somewhere you like.
 And if you want to be able to reference from anywhere on your system, then
 create a symlink to the application in one of the following locations:
 
-* `$HOME/bin`           (yourself only)
-* `/usr/local/bin`      (you and other local users)
-* `/usr/local/sbin`     (root only)
+| Folder            |   Access                    |
+|-------------------|-----------------------------|
+| `$HOME/bin`       |   yourself only             |
+| `/usr/local/bin`  |   you and other local users |
+| `/usr/local/sbin` |   root only                 |
 
 Create symlink:
 
