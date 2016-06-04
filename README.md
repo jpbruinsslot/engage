@@ -31,7 +31,7 @@ It changes this:
         },
         {
             "name": "warp",
-            "action": "./engines.sh && ./warp.sh",
+            "action": "./engines.sh; ./warp.sh",
             "usage": "Use to jump to warp speed"
         }
     ]
@@ -140,7 +140,7 @@ Now we need to create our config file `engage.json`, an example:
         },
         {
             "name": "warp",
-            "action": "./engines.sh && ./warp.sh",
+            "action": "./engines.sh; ./warp.sh",
             "usage": "Use to jump to warp speed"
         }
     ]
@@ -188,8 +188,7 @@ engines operational
 warp speed 9, engage ...
 ```
 
-As you can see in the example file you can combine commands by using
-`&&` and `;`.
+As you can see in the example file you can chain commands by using `;`.
 
 Todo
 ----

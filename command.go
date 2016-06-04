@@ -35,8 +35,8 @@ type Command struct {
 // cli.Command
 func (cmd Command) createAction() func(c *cli.Context) {
 	action := func(c *cli.Context) {
-		// when commands are combined, split on && and ;
-		commands := regexp.MustCompile("[&&;]").Split(cmd.Action, -1)
+		// when commands are combined, split on `;`
+		commands := regexp.MustCompile(`[;]`).Split(cmd.Action, -1)
 
 		for _, commandStr := range commands {
 			// remove trailing spaces when && or ; is used
