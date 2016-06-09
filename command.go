@@ -50,10 +50,11 @@ func (cmd Command) createAction() func(c *cli.Context) {
 			// Example: `command arg1 arg2 cli_arg1 cli_arg2`
 			command := commandArr[0]
 			args := append(commandArr[1:], c.Args()...)
+			cmd := exec.Command(command, args...)
 
 			// puts the terminal connected into raw mode, data is given as-is
-			// to the program, and the system does not interpret any of the
-			// special characters
+			// to the program (pty), and the system does not interpret any of
+			// the special characters
 			// - https://en.wikipedia.org/wiki/Cooked_mode
 			// - http://stackoverflow.com/a/13104579/1346257
 			fd := os.Stdin.Fd()
@@ -64,9 +65,9 @@ func (cmd Command) createAction() func(c *cli.Context) {
 			defer terminal.Restore(int(fd), oldState)
 
 			// execute the command and use a pseudo-terminal
-			cmd := exec.Command(command, args...)
 			tty, err := pty.Start(cmd)
 			if err != nil {
+				log.Println("EHLLO")
 				log.Fatal(err)
 			}
 			defer tty.Close()
@@ -83,6 +84,8 @@ func (cmd Command) createAction() func(c *cli.Context) {
 
 			err = cmd.Wait()
 			if err != nil {
+				// restore terminal to oldState when interrupted
+				terminal.Restore(int(fd), oldState)
 				log.Fatal(err)
 			}
 		}
