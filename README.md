@@ -64,6 +64,9 @@ GLOBAL OPTIONS:
    --version, -v        print the version
 ```
 
+Below you'll find the explanation for doing this, but there is also a [blog
+post](http://bruinsslot.jp/2016/06/10/create-cli-applications-with-a-config-file/)
+that will help you guide through it.
 
 Using Engage
 ------------
