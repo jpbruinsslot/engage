@@ -5,8 +5,8 @@ import (
 	"os"
 	"path"
 
-	"github.com/codegangsta/cli"
 	"github.com/kardianos/osext"
+	"github.com/urfave/cli"
 )
 
 func main() {

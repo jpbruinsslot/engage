@@ -3,28 +3,34 @@
 	"ignore": "test",
 	"package": [
 		{
-			"checksumSHA1": "i27YHcyHY4stkXm12/ztso3wHUo=",
-			"path": "github.com/codegangsta/cli",
-			"revision": "71f57d300dd6a780ac1856c005c4b518cfd498ec",
-			"revisionTime": "2016-04-04T01:54:34Z"
-		},
-		{
-			"checksumSHA1": "6nmAJBw2phU9MUmkUnqFvbO5urg=",
+			"checksumSHA1": "Mnp6EGM0pdGxMe19f6dg+ipjaSo=",
 			"path": "github.com/kardianos/osext",
-			"revision": "29ae4ffbc9a6fe9fb2bc5029050ce6996ea1d3bc",
-			"revisionTime": "2015-12-22T15:32:29Z"
+			"revision": "9b883c5eb462dd5cb1b0a7a104fe86bc6b9bd391",
+			"revisionTime": "2017-02-07T19:16:55Z"
 		},
 		{
-			"checksumSHA1": "P29nLcVx4WzwhEDgDTCN76rS5WI=",
+			"checksumSHA1": "eIjJhEqZZmQwt++0jlQhbIhAcH4=",
 			"path": "github.com/kr/pty",
-			"revision": "f7ee69f31298ecbe5d2b349c711e2547a617d398",
-			"revisionTime": "2015-10-07T23:04:24Z"
+			"revision": "ce7fa45920dc37a92de8377972e52bc55ffa8d57",
+			"revisionTime": "2016-07-16T20:46:20Z"
 		},
 		{
-			"checksumSHA1": "N5fb5y92DFIP+wUhi1rSwPp9vyk=",
+			"checksumSHA1": "K/CP3EBR0TUpw8DPpjRExGEYNkY=",
+			"path": "github.com/urfave/cli",
+			"revision": "9e5b04886c4bfee2ceba1465b8121057355c4e53",
+			"revisionTime": "2017-03-04T22:33:36Z"
+		},
+		{
+			"checksumSHA1": "xiderUuvye8Kpn7yX3niiJg32bE=",
 			"path": "golang.org/x/crypto/ssh/terminal",
-			"revision": "2f6fccd33b9b1fc23ebb73ad4890698820f7174d",
-			"revisionTime": "2016-04-06T19:39:42Z"
+			"revision": "40541ccb1c6e64c947ed6f606b8a6cb4b67d7436",
+			"revisionTime": "2017-02-12T21:20:41Z"
+		},
+		{
+			"checksumSHA1": "Cr7PCm9qzQ42fegneTyZqJMKUqg=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "e48874b42435b4347fc52bdee0424a52abc974d7",
+			"revisionTime": "2017-03-02T21:05:23Z"
 		}
 	],
 	"rootPath": "github.com/erroneousboat/engage"

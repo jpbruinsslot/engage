@@ -11,8 +11,8 @@ import (
 
 	"golang.org/x/crypto/ssh/terminal"
 
-	"github.com/codegangsta/cli"
 	"github.com/kr/pty"
+	"github.com/urfave/cli"
 )
 
 // App is the struct that holds the application specification
@@ -67,7 +67,6 @@ func (cmd Command) createAction() func(c *cli.Context) {
 			// execute the command and use a pseudo-terminal
 			tty, err := pty.Start(cmd)
 			if err != nil {
-				log.Println("EHLLO")
 				log.Fatal(err)
 			}
 			defer tty.Close()
