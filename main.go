@@ -3,21 +3,26 @@ package main
 import (
 	"log"
 	"os"
-	"path"
+	"path/filepath"
 
-	"github.com/kardianos/osext"
 	"github.com/urfave/cli"
 )
 
 func main() {
 	// Get location of the binary
-	binPath, err := osext.Executable()
+	path, err := os.Executable()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// When used, resolve symlinks
+	binPath, err := filepath.EvalSymlinks(path)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	// Change the current working directory to the path of the binary
-	os.Chdir(path.Dir(binPath))
+	os.Chdir(filepath.Dir(binPath))
 
 	// Initialize new app
 	newApp, cliCommands, _ := NewApp()
